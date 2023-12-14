@@ -5,6 +5,9 @@ createApp({
     data(){
         return {
 
+            // DEFINISCO LA VARIABILE CHE INDICHI LA POSIZIONE DELL'OGGETTO NELL ARRAY
+            visibleChat: 0,
+
             // DEFINISCO L'ARRAY DI OGGETTI CHE CONTIENE I CONTATTI
             contacts: [
 
@@ -177,6 +180,9 @@ createApp({
         
     },
     methods: {
-        
+        // DEFINISCO LA FUNZIONE CHE MI PERMETTA DI CAMBIARE L'UTENTE AL CLICK DELLA CHAT
+        chatSwitch(index){
+            this.visibleChat = index;
+        }
     },
 }).mount('#app')

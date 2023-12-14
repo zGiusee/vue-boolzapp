@@ -86,7 +86,7 @@
                                     <div class="mx-4">
                                       <span class=""><i class="fa-solid fa-magnifying-glass my-grey"></i></span>
                                     </div>
-                                    <input type="text" class="my-search-form" placeholder="Cerca o inizia una nuova chat" v-model="newChat">
+                                    <input type="text" class="my-search-form" placeholder="Cerca o inizia una nuova chat" >
                                 </div>
                             </div>
                             <!-- END OF CONTACT SEARCH BOX -->
@@ -94,7 +94,7 @@
 
                             <!-- CONTACT SECTION -->
                             <ul class="contacts list-unstyled" v-for="(contact, index) in contacts">
-                                <li>
+                                <li @click="chatSwitch(index)">
                                     <div class="d-flex align-items-center position-relative py-2">
 
                                         <!-- USER IMG -->
@@ -125,6 +125,8 @@
                 <!-- END OF LEFT SIDE -->
     
 
+
+
                 <!-- START OF RIGHT SIDE -->
                 <div id="right-side" class="col-8 p-0">
 
@@ -140,12 +142,12 @@
 
                                         <!-- ACTIVE USER IMG -->
                                         <div class="mx-3">
-                                            <img src="./img/avatar_1.jpg" class="avatar-img align-middle">
+                                            <img :src="contacts[visibleChat].avatar" class="avatar-img align-middle">
                                         </div>
                                         
                                         <!-- ACTIVE NAME AND LAST ACCES -->
                                         <div>
-                                            <span class="align-middle">Michele</span>
+                                            <span class="align-middle">{{ contacts[visibleChat].name }}</span>
                                             <span class="my-text-sm-grey d-block">Ultimo accesso oggi alle 12:00</span>
                                         </div>
             
@@ -170,24 +172,12 @@
                     <!-- RIGHT SIDE MESSAGE BOX -->
                     <div class="msg-box pt-3">
 
-                        <div class="received-msg">
-                            <div class="received-msg-style">
-                                <span>Ciao come stai?</span>
-                                <span class="msg-time">12:00</span>
-                            </div>
-                        </div>
-
-                        <div class="sent-msg">
-                            <div class="sent-msg-style">
-                                <span>Bene, tu?</span>
-                                <span class="msg-time">12:00</span>
-                            </div>
-                        </div>
-
-                        <div class="sent-msg">
-                            <div class="sent-msg-style">
-                                <span>Bene, tu?</span>
-                                <span class="msg-time">12:00</span>
+                        <div v-for="(message, index) in contacts[visibleChat].messages" :key="index">
+                            <div :class="message.status == 'received' ? 'received-msg' : 'sent-msg'">
+                                <div :class="message.status == 'received' ? 'received-msg-style' : 'sent-msg-style'">
+                                    <span>{{ message.message }}</span>
+                                    <span class="msg-time">12:00</span>
+                                </div>
                             </div>
                         </div>
 
