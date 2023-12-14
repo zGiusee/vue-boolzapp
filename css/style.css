@@ -118,6 +118,47 @@
     outline: 1px solid #B0B1B0;
 }
 
+/* RIGHT SIDE MESSAGE-BOX MESSAGE */
+
+.msg-box{
+    overflow: auto;
+}
+
+.received-msg{
+    float: left;
+}
+
+.sent-msg{
+    float: right;
+}
+
+.received-msg-style, .sent-msg-style{
+    position: relative;
+    margin: 7px 40px;
+    border-radius: 12px;
+    padding: 10px 20px;
+    width: 300px;
+}
+
+
+.received-msg-style{
+    background-color: white;
+}
+
+.sent-msg-style{
+    background-color: #D5F9BB;
+}
+
+.msg-time{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    padding: 0px 5px 5px 0px;
+    font-size: 10px;
+    color: #B0B1B0;
+}
+
+
 /* Image settings */
 
 .avatar-img{
