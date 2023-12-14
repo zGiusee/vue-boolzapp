@@ -129,15 +129,16 @@
 }
 
 .sent-msg{
-    float: right;
+   float: right;
 }
 
 .received-msg-style, .sent-msg-style{
     position: relative;
-    margin: 7px 40px;
+    margin: 10px 60px 10px 60px;
     border-radius: 12px;
     padding: 10px 20px;
-    width: 300px;
+    width: 350px;
+    word-break: break-all;
 }
 
 

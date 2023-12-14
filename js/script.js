@@ -8,6 +8,9 @@ createApp({
             // DEFINISCO LA VARIABILE CHE INDICHI LA POSIZIONE DELL'OGGETTO NELL ARRAY
             visibleChat: 0,
 
+            // DEFINISCO LA VARIABILE DEL NUOVO MESSAGGIO
+            newMessage: '',
+
             // DEFINISCO L'ARRAY DI OGGETTI CHE CONTIENE I CONTATTI
             contacts: [
 
@@ -178,11 +181,40 @@ createApp({
     },
     created() {
         
+        
     },
     methods: {
         // DEFINISCO LA FUNZIONE CHE MI PERMETTA DI CAMBIARE L'UTENTE AL CLICK DELLA CHAT
         chatSwitch(index){
             this.visibleChat = index;
-        }
+        },
+        // DEFINISCO LA FUNZIONI DI INVIO DI NUOVI MESSAGGI E DELLA RISPOSTA AUTOMATICA
+        sendMessage(){
+
+            // MESSAGGIO INVIATO =
+            let obj = {
+                date: '10/01/2020 15:50:00',
+                message: this.newMessage,
+                status: 'sent'
+            }
+
+            // RISPOSTA =
+            let obj2 = {
+
+                date: '10/01/2020 15:50:00',
+                message: 'Ok',
+                status: 'received'
+            }
+
+            // MESSAGGIO INVIATO =
+            this.contacts[this.visibleChat].messages.push(obj);
+
+            // RISPOSTA =
+            setTimeout(() => {
+                this.contacts[this.visibleChat].messages.push(obj2);
+            }, 1000);
+
+            this.newMessage= ' ';
+        },
     },
 }).mount('#app')
