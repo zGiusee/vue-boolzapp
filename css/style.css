@@ -49,9 +49,18 @@
 
 /* LEFT SIDE */
 
-.my-user-icons a{
+.my-user-buttons i{
     color: #B0B1B0;
     margin: 0px 5px;
+}
+
+.my-user-buttons button{
+    border: none;
+    background-color: transparent;
+}
+
+.my-user-buttons button:hover{
+    background-color: transparent;
 }
 
 .contacts{
@@ -86,7 +95,7 @@
 
 /* LEFT SIDE SEARCH BOX */
 
-.my-form{
+.my-search-form{
     outline: none;
     border: none;
     width: 100%;
@@ -94,6 +103,20 @@
 
 /* RIGHT SIDE */
 
+/* RIGHT SIDE INPUT MESSAGE BOX*/
+
+.my-input-message-form{
+    outline: none;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.my-input-message-form:focus{
+    transition: 1s;
+    outline: 1px solid #B0B1B0;
+}
 
 /* Image settings */
 
