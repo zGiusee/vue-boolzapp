@@ -28,40 +28,95 @@
                         <div class="flex-column">
 
                             <!-- USER NAME SECTION -->
-                            <div class="col-12 p-0">
 
-                                <!-- MY LEFT SIDE HEADER -->
-                                <header class="my-header d-flex">
-                                    <!-- AVATAR AND NAME -->
-                                    <div class="col-6 d-flex align-items-center">
+                            <!-- MY LEFT SIDE HEADER -->
+                            <header class="my-header d-flex">
+                                <!-- AVATAR AND NAME -->
+                                <div class="col-6 d-flex align-items-center">
+                                    
+                                    <div class="d-flex align-items-center">
+                                        <div class="mx-3">
+                                            <img src="./img/avatar_io.jpg" alt="My Image" class="avatar-img align-middle">
+                                        </div>
+                                        <div>
+                                            <span class="align-middle">Sofia</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- ICONS -->
+                                <div class="col-6 d-flex align-items-center justify-content-end">
+                                    <div class="d-flex">
                                         
-                                        <div class="d-flex align-items-center">
-                                            <div class="mx-3">
-                                                <img src="./img/avatar_io.jpg" alt="My Image" class="avatar-img align-middle">
-                                            </div>
-                                            <div>
-                                                <span class="align-middle">Sofia</span>
-                                            </div>
+                                        <div class="my-user-icons mx-3">
+                                            <a href=""><i class="fa-solid fa-circle-notch fa-lg"></i></a>
+                                            <a href=""><i class="fa-solid fa-message fa-lg"></i></a>
+                                            <a href=""><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></a>
                                         </div>
 
                                     </div>
+                                </div>
 
-                                    <!-- ICONS -->
-                                    <div class="col-6 d-flex align-items-center justify-content-end">
-                                        <div class="d-flex">
-                                            
-                                            <div class="my-user-icons mx-3">
-                                                <a href=""><i class="fa-solid fa-circle-notch fa-lg"></i></a>
-                                                <a href=""><i class="fa-solid fa-message fa-lg"></i></a>
-                                                <a href=""><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></a>
-                                            </div>
+                            </header>
+                            <!-- END OF MY USER NAME SECTION -->
 
-                                        </div>
+
+                            <!-- START OF NOTIFICATION REMINDER BOX -->
+                            <div class="my-bg-aquamarine">
+                                <div class="d-flex align-items-center py-3">
+
+                                    <div class="mx-3">
+                                        <i class="fa-solid fa-bell-slash fa-xl my-aquamarine"></i>
+                                    </div>
+                                    
+                                    <div>
+                                        <span class="align-middle">Ricevi notifiche di nuovi messaggi</span>
+                                        <span class="d-block my-text-sm-grey text-decoration-underline">Attiva notifiche desktop</span>
                                     </div>
 
-                                </header>
+                                </div>
                             </div>
-                            <!-- MY USER NAME SECTION -->
+                            <!-- END OF NOTIFICATION REMINDER BOX -->
+
+
+                            <!-- START OF CONTACT SEARCH BOX -->
+                            <div>
+                                <div class="d-flex py-3 mx-3">
+                                    <div class="mx-4">
+                                      <span class=""><i class="fa-solid fa-magnifying-glass my-grey"></i></span>
+                                    </div>
+                                    <input type="text" class="my-form" placeholder="Cerca o inizia una nuova chat" v-model="newChat">
+                                </div>
+                            </div>
+                            <!-- END OF CONTACT SEARCH BOX -->
+
+
+                            <!-- CONTACT SECTION -->
+                            <ul class="contacts list-unstyled" v-for="(contact, index) in contacts">
+                                <li>
+                                    <div class="d-flex align-items-center position-relative py-2">
+
+                                        <!-- USER IMG -->
+                                        <div class="mx-3">
+                                            <img :src="contact.avatar" alt="contact.name" class="avatar-img align-middle">
+                                        </div>
+                                        
+                                        <!-- NAME AND LAST MESSAGE -->
+                                        <div>
+                                            <span class="align-middle">{{ contact.name }}</span>
+                                            <span class="d-block my-text-sm-grey">Ciao...</span>
+                                        </div>
+
+                                        <!-- HOUR -->
+                                        <div class="last-acces">
+                                            <span>12:00</span>
+                                        </div>
+
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- END OF CONTACT SECTION -->
 
                         </div>
                     </div>
@@ -73,9 +128,36 @@
                 <!-- START OF RIGHT SIDE -->
                 <div id="right-side" class="col-8 p-0">
 
-                    <!-- RIGHT SIDE HEADER -->
+                    <!-- RIGHT SIDE HEADER (ACTIVE USER) -->
                     <header class="my-header">
+                        <div class="container">
+                            <div class="row">
+                                <!-- ACTIVE USER INFO AND SETTINGS ICONS -->
 
+                                <!-- ACTIVE USER INFO -->
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center py-2">
+
+                                        <!-- ACTIVE USER IMG -->
+                                        <div class="mx-3">
+                                            <img src="./img/avatar_1.jpg" class="avatar-img align-middle">
+                                        </div>
+                                        
+                                        <!-- ACTIVE NAME AND LAST ACCES -->
+                                        <div>
+                                            <span class="align-middle">Michele</span>
+                                            <span class="my-text-sm-grey d-block">Ultimo accesso oggi alle 12:00</span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+
+                                <!-- SETTINGS ICONS -->
+                                <div class="col-6">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </header>
 
                     <!-- RIGHT SIDE MESSAGE BOX -->

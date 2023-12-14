@@ -54,6 +54,44 @@
     margin: 0px 5px;
 }
 
+.contacts{
+    cursor: pointer;
+}
+
+.contacts:hover{
+    background-color: #F4EEE9;
+}
+
+.my-text-sm-grey{
+    font-size: 13px;
+    color: #B0B1B0;
+}
+
+.last-acces{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 11px;
+    color: #B0B1B0;
+    font-weight: bold;
+}
+
+/* LEFT SIDE NOTIFICATION BOX */
+
+.fa-bell-slash{
+    background-color: white;
+    padding: 26px 12px;
+    border-radius: 50%;
+}
+
+/* LEFT SIDE SEARCH BOX */
+
+.my-form{
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
 /* RIGHT SIDE */
 
 
@@ -76,4 +114,22 @@
 .my-bg-grey{
     background-color: #F4EEE9;
 }
+
+.my-bg-aquamarine{
+    background-color: #8EDAFC;
+}
+
+.my-grey{
+    color: #B0B1B0;
+}
+
+.my-aquamarine{
+    color: #8EDAFC;
+}
+
+
+.my-light-grey{
+    color: #F4EEE9;
+}
+
 
