@@ -25,63 +25,74 @@
                 <div id="left-side" class="col-4 p-0">
 
                     <div class="container p-0">
-                        <div class="flex-column">
+                        <div class="flex-column row">
 
                             <!-- USER NAME SECTION -->
 
                             <!-- MY LEFT SIDE HEADER -->
-                            <header class="my-header d-flex">
-                                <!-- AVATAR AND NAME -->
-                                <div class="col-6 d-flex align-items-center">
-                                    
-                                    <div class="d-flex align-items-center">
-                                        <div class="mx-3">
-                                            <img src="./img/avatar_io.jpg" alt="My Image" class="avatar-img align-middle">
-                                        </div>
-                                        <div>
-                                            <span class="align-middle">Sofia</span>
-                                        </div>
-                                    </div>
+                            <div class="col-12">
 
-                                </div>
+                                <header class="my-header d-flex">
 
-                                <!-- ICONS -->
-                                <div class="col-6 d-flex align-items-center justify-content-end">
-                                    <div class="d-flex">
+                                    <div class="row w-100">
+                                        <!-- AVATAR AND NAME -->
+                                        <div class="col-6 d-flex align-items-center">
+                                            
+                                            <div class="d-flex align-items-center">
+                                                <div class="mx-3">
+                                                    <img src="./img/avatar_io.jpg" alt="My Image" class="avatar-img align-middle">
+                                                </div>
+                                                <div>
+                                                    <span class="align-middle">Sofia</span>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+    
+                                        <!-- ICONS -->
+                                        <div class="col-6 d-flex align-items-center justify-content-end">
                                         
-                                        <div class="my-user-buttons mx-3">
-                                            <button><i class="fa-solid fa-circle-notch fa-lg"></i></button>
-                                            <button><i class="fa-solid fa-message fa-lg"></i></button>
-                                            <button><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></button>
+                                            <div class="d-flex">
+                
+                                                <div class="my-user-buttons mx-3 justify-content-end">
+                                                    <button><i class="fa-solid fa-circle-notch fa-lg"></i></button>
+                                                    <button><i class="fa-solid fa-message fa-lg"></i></button>
+                                                    <button><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></button>
+                                                </div>
+    
+                                            </div>
+
                                         </div>
-
                                     </div>
-                                </div>
 
-                            </header>
+                                </header>
+                                
+                            </div>
                             <!-- END OF MY USER NAME SECTION -->
 
 
                             <!-- START OF NOTIFICATION REMINDER BOX -->
-                            <div class="my-bg-aquamarine">
-                                <div class="d-flex align-items-center py-3">
-
-                                    <div class="mx-3">
-                                        <i class="fa-solid fa-bell-slash fa-xl my-aquamarine"></i>
+                            <div class="col-12">
+                                <div class="my-bg-aquamarine">
+                                    <div class="d-flex align-items-center py-3">
+    
+                                        <div class="mx-3">
+                                            <i class="fa-solid fa-bell-slash fa-xl my-aquamarine"></i>
+                                        </div>
+                                        
+                                        <div>
+                                            <span class="align-middle">Ricevi notifiche di nuovi messaggi</span>
+                                            <span class="d-block my-text-sm-grey text-decoration-underline">Attiva notifiche desktop</span>
+                                        </div>
+    
                                     </div>
-                                    
-                                    <div>
-                                        <span class="align-middle">Ricevi notifiche di nuovi messaggi</span>
-                                        <span class="d-block my-text-sm-grey text-decoration-underline">Attiva notifiche desktop</span>
-                                    </div>
-
                                 </div>
                             </div>
                             <!-- END OF NOTIFICATION REMINDER BOX -->
 
 
                             <!-- START OF CONTACT SEARCH BOX -->
-                            <div>
+                            <div class="col-12">
                                 <div class="d-flex py-3 mx-3">
                                     <div class="mx-4">
                                       <span class=""><i class="fa-solid fa-magnifying-glass my-grey"></i></span>
@@ -93,29 +104,31 @@
 
 
                             <!-- CONTACT SECTION -->
-                            <ul class="contacts list-unstyled" v-for="(contact, index) in contacts">
-                                <li @click="chatSwitch(index)">
-                                    <div class="d-flex align-items-center position-relative py-2">
-
-                                        <!-- USER IMG -->
-                                        <div class="mx-3">
-                                            <img :src="contact.avatar" alt="contact.name" class="avatar-img align-middle">
+                            <div class="col-12">
+                                <ul class="contacts list-unstyled" v-for="(contact, index) in contacts">
+                                    <li @click="chatSwitch(index)">
+                                        <div class="d-flex align-items-center position-relative py-2">
+    
+                                            <!-- USER IMG -->
+                                            <div class="mx-3">
+                                                <img :src="contact.avatar" alt="contact.name" class="avatar-img align-middle">
+                                            </div>
+                                            
+                                            <!-- NAME AND LAST MESSAGE -->
+                                            <div>
+                                                <span class="align-middle">{{ contact.name }}</span>
+                                                <span class="d-block my-text-sm-grey">{{ contact.messages[0].message }}</span>
+                                            </div>
+    
+                                            <!-- HOUR -->
+                                            <div class="last-acces">
+                                                <span>12:00</span>
+                                            </div>
+    
                                         </div>
-                                        
-                                        <!-- NAME AND LAST MESSAGE -->
-                                        <div>
-                                            <span class="align-middle">{{ contact.name }}</span>
-                                            <span class="d-block my-text-sm-grey">{{ contact.messages[0].message }}</span>
-                                        </div>
-
-                                        <!-- HOUR -->
-                                        <div class="last-acces">
-                                            <span>12:00</span>
-                                        </div>
-
-                                    </div>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
                             <!-- END OF CONTACT SECTION -->
 
                         </div>
