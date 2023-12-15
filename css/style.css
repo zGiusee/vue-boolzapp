@@ -136,8 +136,8 @@
     position: relative;
     margin: 10px 60px 10px 60px;
     border-radius: 12px;
-    padding: 10px 20px;
-    width: 350px;
+    padding: 13px 20px;
+    width: 250px;
     word-break: break-all;
 }
 
@@ -154,8 +154,8 @@
     position: absolute;
     right: 0px;
     bottom: 0px;
-    padding: 0px 5px 5px 0px;
-    font-size: 10px;
+    padding: 0px 4px 4px 0px;
+    font-size: 9px;
     color: #B0B1B0;
 }
 

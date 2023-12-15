@@ -89,24 +89,25 @@
                                 </div>
                             </div>
                             <!-- END OF NOTIFICATION REMINDER BOX -->
-
-
-                            <!-- START OF CONTACT SEARCH BOX -->
-                            <div class="col-12">
-                                <div class="d-flex py-3 mx-3">
-                                    <div class="mx-4">
-                                      <span class=""><i class="fa-solid fa-magnifying-glass my-grey"></i></span>
-                                    </div>
-                                    <input type="text" class="my-search-form" placeholder="Cerca o inizia una nuova chat" >
-                                </div>
-                            </div>
-                            <!-- END OF CONTACT SEARCH BOX -->
-
-
+                            
+            
+                            
                             <!-- CONTACT SECTION -->
                             <div class="col-12">
+
+                                <!-- START OF CONTACT SEARCH BOX -->
+                                <div class="d-flex py-3 mx-3">
+                                    <div class="mx-4">
+                                        <span class=""><i class="fa-solid fa-magnifying-glass my-grey"></i></span>
+                                    </div>
+                                    <input type="text" class="my-search-form" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="searchContact">
+                                </div>
+                                <!-- END OF CONTACT SEARCH BOX -->
+
+
+                                <!-- START OF CONTACTS LIST -->
                                 <ul class="contacts list-unstyled" v-for="(contact, index) in contacts">
-                                    <li @click="chatSwitch(index)">
+                                    <li @click="chatSwitch(index)" v-show="contact.visible">
                                         <div class="d-flex align-items-center position-relative py-2">
     
                                             <!-- USER IMG -->
@@ -185,11 +186,11 @@
                     <!-- RIGHT SIDE MESSAGE BOX -->
                     <div class="msg-box pt-3">
 
-                        <div v-for="(message, index) in contacts[visibleChat].messages" :key="index">
+                        <div class="overflow-auto" v-for="(message, index) in contacts[visibleChat].messages" :key="index">
                             <div :class="message.status == 'received' ? 'received-msg' : 'sent-msg'">
                                 <div :class="message.status == 'received' ? 'received-msg-style' : 'sent-msg-style'">
                                     <span>{{ message.message }}</span>
-                                    <span class="msg-time">12:00</span>
+                                    <span class="msg-time">{{ message.date}}</span>
                                 </div>
                             </div>
                         </div>

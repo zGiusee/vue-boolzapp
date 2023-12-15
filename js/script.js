@@ -11,6 +11,9 @@ createApp({
             // DEFINISCO LA VARIABILE DEL NUOVO MESSAGGIO
             newMessage: '',
 
+            // DEFINISCO LA VARIABILE DOVE VERRA INSERITO IL TESTO DI RICERCA CONTATTI
+            search: '',
+
             // DEFINISCO L'ARRAY DI OGGETTI CHE CONTIENE I CONTATTI
             contacts: [
 
@@ -216,5 +219,16 @@ createApp({
 
             this.newMessage= ' ';
         },
+        // DEFINISCO LA FUNZIONE DI RICERCA CONTATTI
+        searchContact(){
+            this.contacts.forEach((elem) => {
+                if(elem.name.toLowerCase().includes(this.search.toLowerCase())){
+                    elem.visible = true;
+                }
+                else{
+                    elem.visible = false;
+                }
+            });
+        }
     },
 }).mount('#app')
