@@ -186,11 +186,16 @@
                     <!-- RIGHT SIDE MESSAGE BOX -->
                     <div class="msg-box pt-3">
 
-                        <div class="overflow-auto" v-for="(message, index) in contacts[visibleChat].messages" :key="index">
-                            <div :class="message.status == 'received' ? 'received-msg' : 'sent-msg'">
+                        <div class="clearfix" v-for="(message, index) in contacts[visibleChat].messages" :key="index">
+                            <div id="message" :class="message.status == 'received' ? 'received-msg' : 'sent-msg'">
                                 <div :class="message.status == 'received' ? 'received-msg-style' : 'sent-msg-style'">
                                     <span>{{ message.message }}</span>
                                     <span class="msg-time">{{ message.date}}</span>
+                                    <span @click="showMsgDropdown(index)" class="msg-option"><i class="fa-solid fa-chevron-down"></i></span>
+                                    <div v-show="message.dropdown" class="my-dropdown p-3">
+                                        <span class="d-block py-2">Info Messaggio</span>
+                                        <span @click="deleteMessage(index)" class="py-2">Elimina messaggio</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
