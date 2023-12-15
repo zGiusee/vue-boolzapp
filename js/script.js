@@ -229,6 +229,14 @@ createApp({
                     elem.visible = false;
                 }
             });
-        }
+        },
+        // DEFINISCO LA FUNZIONE CHE RECUPERI L'ULTIMO MESSAGGIO INVIATO DALL'UTENTE
+        lastMessage(index){
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0,20) + '...';
+        },
+        lastDate(index){
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+        },
+
     },
 }).mount('#app')
