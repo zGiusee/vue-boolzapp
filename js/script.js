@@ -193,6 +193,17 @@ createApp({
                         }
                     ],
                 }
+            ],
+            
+            // DEFINISCO UN ARRAY DI RISPOSTE CASUALI
+            randomMessage: [
+                'Si, tutto bene!', 
+                'Devo dirti una cosa...', 
+                'La carbonara la faccio con la panna...', 
+                'No!', 
+                'Si!',
+                'Come osi?',
+                'Non ho mai visto Star Wars!',
             ]
 
         }
@@ -221,7 +232,7 @@ createApp({
             let obj2 = {
 
                 date: currentDate,
-                message: 'Ok',
+                message: this.randomAnswer(),
                 status: 'received',
                 dropdown: false,
             }
@@ -267,6 +278,15 @@ createApp({
         // DEFINISCO LA FUNZIONE CHE RIMUOVA I MESSAGGI
         deleteMessage(index){
             this.contacts[this.visibleChat].messages.splice(index, 1);
+        },
+        // DEFINISCO LA FUNZIONE CHE GENERI RISPOSTE CASUALI
+        randomAnswer(){
+
+            let rngNumber = Math.floor(Math.random() * this.randomMessage.length);
+
+            let rngAnswer = this.randomMessage[rngNumber];
+
+            return rngAnswer;
         }
 
     },
