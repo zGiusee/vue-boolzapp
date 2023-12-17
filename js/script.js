@@ -1,6 +1,9 @@
 // Inizializzo l'applicazione
 const { createApp } = Vue
 
+ // DICHIARO LA VARIABILE (Globale) CHE INDICHI LA DATA (Mese, Giorno, Anno[2 cifre], Ore, Minuti)
+ const currentDate = luxon.DateTime.local().toFormat('dd/MM/yy HH:mm');
+
 createApp({
     data(){
         return {
@@ -208,7 +211,7 @@ createApp({
 
             // MESSAGGIO INVIATO =
             let obj = {
-                date: '10/01/2020 15:50:00',
+                date: currentDate,
                 message: this.newMessage,
                 status: 'sent',
                 dropdown: false,
@@ -217,7 +220,7 @@ createApp({
             // RISPOSTA =
             let obj2 = {
 
-                date: '10/01/2020 15:50:00',
+                date: currentDate,
                 message: 'Ok',
                 status: 'received',
                 dropdown: false,

@@ -187,15 +187,27 @@
                     <div class="msg-box pt-3">
 
                         <div class="clearfix" v-for="(message, index) in contacts[visibleChat].messages" :key="index">
-                            <div id="message" :class="message.status == 'received' ? 'received-msg' : 'sent-msg'">
+                            <div id="message" class="position-relative" :class="message.status == 'received' ? 'received-msg' : 'sent-msg'">
+
+                                <img 
+                                :src="message.status == 'received' ? contacts[visibleChat].avatar : './img/avatar_io.jpg'" 
+                                class="avatar-img" 
+                                :class="message.status == 'received' ? 'img-position-left' : 'img-position-right'" 
+                                alt="">
+                                
                                 <div :class="message.status == 'received' ? 'received-msg-style' : 'sent-msg-style'">
+                                    
                                     <span>{{ message.message }}</span>
+
                                     <span class="msg-time">{{ message.date}}</span>
+
                                     <span @click="showMsgDropdown(index)" class="msg-option"><i class="fa-solid fa-chevron-down"></i></span>
+
                                     <div v-show="message.dropdown" class="my-dropdown p-3">
                                         <span class="d-block py-2">Info Messaggio</span>
                                         <span @click="deleteMessage(index)" class="py-2">Elimina messaggio</span>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -235,6 +247,7 @@
     </div>
     
     <!-- Script Links -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
