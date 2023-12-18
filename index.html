@@ -118,12 +118,12 @@
                                             <!-- NAME AND LAST MESSAGE -->
                                             <div>
                                                 <span class="align-middle">{{ contact.name }}</span>
-                                                <span class="d-block my-text-sm-grey">{{ lastMessage(index) }}</span>
+                                                <span class="d-block my-text-sm-grey"> {{ lastMessage(index) }}</span>
                                             </div>
     
                                             <!-- HOUR -->
                                             <div class="last-acces">
-                                                <span>{{ lastDate(index) }}</span>
+                                                <span> {{ lastDate(index)}} </span>
                                             </div>
     
                                         </div>
@@ -162,7 +162,7 @@
                                         <!-- ACTIVE NAME AND LAST ACCES -->
                                         <div>
                                             <span class="align-middle">{{ contacts[visibleChat].name }}</span>
-                                            <span class="my-text-sm-grey d-block">Ultimo accesso oggi alle {{ lastDate(visibleChat) }}</span>
+                                            <span class="my-text-sm-grey d-block">Ultimo accesso oggi alle {{ lastDate(visibleChat)}}</span>
                                         </div>
             
                                     </div>

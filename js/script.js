@@ -203,6 +203,7 @@ createApp({
                 'No!', 
                 'Si!',
                 'Come osi?',
+                'Ok',
                 'Non ho mai visto Star Wars!',
             ]
 
@@ -260,11 +261,18 @@ createApp({
         },
         // DEFINISCO LA FUNZIONE CHE RECUPERI L'ULTIMO MESSAGGIO INVIATO DALL'UTENTE
         lastMessage(index){
-            return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0,20) + '...';
+            if(this.contacts[index].messages.length > 0){
+                
+                return this.contacts[index].messages[this.contacts[index].messages.length - 1].message.slice(0,20) + '...';
+            }
         },
         // DEFINISCO LA FUNZIONE CHE RECUPERI LA DATA DELL'ULTIMO MESSAGGIO
         lastDate(index){
-            return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+            if(this.contacts[index].messages.length > 0){
+
+                return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+            }
+            
         },
         // AGGIUNGO IL DROPDOWN TOGGLE
         showMsgDropdown(index){
@@ -277,6 +285,7 @@ createApp({
         },
         // DEFINISCO LA FUNZIONE CHE RIMUOVA I MESSAGGI
         deleteMessage(index){
+            console.log(index)
             this.contacts[this.visibleChat].messages.splice(index, 1);
         },
         // DEFINISCO LA FUNZIONE CHE GENERI RISPOSTE CASUALI
