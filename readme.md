@@ -1,6 +1,2 @@
 #### Nome repo: vue-boolzapp <br>
-Mi raccomando: proseguite rispettando l'ordine delle milestone, non andate alla successiva se non è terminata quella attuale<br>
-Quando avete terminato una milestone il messaggio di commit deve essere del tipo "FINE MILESTONE "N° MILESTONE"<br>
-Dovete fare almeno 6 push: 1 per milestone obbligatoria più uno di inizializzazione della repo ed 1 di creazione dello scaffolding<br>
-Ovviamente se ne fate di più è meglio<br>
-Come detto, è consigliabile arrivare a fine giornata con la milestone 1 terminata, ma se riuscite ad andare avanti con quelle successive tanto di guadagnato<br>
+Realizzazione di un progetto che si ispira all'applicazione web di WhatsApp, realizzato con VueJs. Con possibiltà di eliminare/inviare messaggi, cambiare chat in base all'utente, tempo effettivo in cui si inviano i messaggi e una funzione che randomicamente fornisce risposte da me create in precedenza.
